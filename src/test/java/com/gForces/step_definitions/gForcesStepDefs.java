@@ -10,6 +10,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.w3c.dom.html.HTMLInputElement;
 
 
 import java.util.List;
@@ -70,17 +74,20 @@ public class gForcesStepDefs {
 
     @Then("user enter new computer name")
     public void user_enter_new_computer_name() {
+        BrowserUtils.waitForPageToLoad(5);
         gForcesPage.computerNameField.sendKeys("apple");
 
     }
 
     @Then("user enter Introduced date")
     public void user_enter_introduced_date() {
+
         gForcesPage.introducedDateField.sendKeys("2021-07-25");
     }
 
     @Then("user enter Discontinued date")
     public void user_enter_discontinued_date() {
+
         gForcesPage.discontinuedDateField.sendKeys("2022-07-25");
     }
 
